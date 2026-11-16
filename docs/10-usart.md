@@ -103,9 +103,9 @@ USARTDIV=M+\frac{F}{16}
 $$
 
 $$
-BRR=(M\ll4)\;|\;F,\qquad
+BRR=16M+F,\qquad
 M=\lfloor USARTDIV\rfloor,\quad
-F\approx\operatorname{round}(16(USARTDIV-M))
+F\approx\mathrm{round}(16(USARTDIV-M))
 $$
 
 BRR的整数部分M占12位，小数部分F占4位；若四舍五入得到F=16，应向M进1且F归0。M与F要符合寄存器范围。
