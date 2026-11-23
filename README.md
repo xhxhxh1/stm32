@@ -1,33 +1,20 @@
-# STM32 / 嵌入式期末复习（第1～10章）
+# STM32 期末理论复习（第 1～10 章）
 
-期末复习
+按原课件顺序复习，示例采用 **STM32F103ZET6** 配套开发板。读代码时，把“操作了什么”和“硬件会怎样”连成一句注释。例如，将 PC0 拉低，会点亮板上的 L1。
 
 ## 章节目录
 
-| 章节 | Markdown笔记 |
+| 章节 | 本章重点 |
 | --- | --- |
-| 01 | [第01章 ARM Cortex-M3嵌入式系统](docs/01-embedded-and-cortex-m3.md) |
-| 02 | [第02章 STM32开发板硬件系统](docs/02-board-hardware.md) |
-| 03 | [第03章 MDK软件与工程模板创建](docs/03-mdk-and-project-template.md) |
-| 04 | [第04章 通用目的输入输出口](docs/04-gpio.md) |
-| 05 | [第05章 LED流水灯与SysTick定时器](docs/05-led-and-systick.md) |
-| 06 | [第06章 按键输入与蜂鸣器](docs/06-keys-and-buzzer.md) |
-| 07 | [第07章 数码管动态显示](docs/07-dynamic-display.md) |
-| 08 | [第08章 中断系统与基本应用](docs/08-interrupts.md) |
-| 09 | [第09章 定时器与脉冲宽度调制](docs/09-timers-and-pwm.md) |
-| 10 | [第10章 串行通信接口USART](docs/10-usart.md) |
+| [01　ARM Cortex-M3 嵌入式系统](docs/01-embedded-and-cortex-m3.md) | 嵌入式系统、处理器内核与 MCU 的关系 |
+| [02　STM32 开发板硬件系统](docs/02-board-hardware.md) | 电源、时钟、复位与有效电平 |
+| [03　MDK 软件与工程模板创建](docs/03-mdk-and-project-template.md) | 工程文件分工，编译、链接与仿真 |
+| [04　通用目的输入输出口](docs/04-gpio.md) | 八种模式，输入与输出寄存器 |
+| [05　LED 流水灯与 SysTick 定时器](docs/05-led-and-systick.md) | 低电平点灯，SysTick 的 1 ms 周期 |
+| [06　按键输入与蜂鸣器](docs/06-keys-and-buzzer.md) | 上拉输入、按键消抖与发声频率 |
+| [07　数码管动态显示](docs/07-dynamic-display.md) | 共阳段码、位选与动态扫描 |
+| [08　中断系统与基本应用](docs/08-interrupts.md) | 边沿触发、优先级与挂起标志 |
+| [09　定时器与脉冲宽度调制](docs/09-timers-and-pwm.md) | 一秒定时、PWM 频率与占空比 |
+| [10　串行通信接口 USART](docs/10-usart.md) | 8N1 数据帧、收发标志与串口校时 |
 
-[第09章示例配套驱动](docs/09-example-dependencies.md)单独列出计时示例所需的延时、数码管和按键文件；相关知识也分别见第05、07、08章。第10章复用这些驱动及第09章TIM6计时模块。
-
-## 阅读标记
-
--  **【基础补充】** ：为理解课件补充的C语言、电路、时钟、计数及数据格式解释。
--  **【讲解示例】** ：按课件任务整理或补全的教学代码，改写条件与课件原例分开说明。
--  **【易错点】** ：寄存器边界、有效电平、函数原型、标志清除等核对内容。
-
-## 代码使用与验证
-
-示例面向STM32F103ZET6、STM32F10x标准外设库和课件配套开发板。延时示例假设HCLK为72MHz；TIM输入时钟和USART总线时钟应按各章条件核对。各项目的main.c分别使用，同名中断处理函数只保留一份。
-
-主要完整示例已用Cortex-M3编译器和实际标准库头文件检查语法与库接口。第10章新增校时模块、校时main及轮询回显main也通过编译检查。未进行完整工程链接、烧录或实机验证。正文保留各示例依赖和使用条件。
-
+以后学习完整程序时，可查阅[改版前的详细笔记](https://github.com/xhxhxh1/stm32/tree/0ef339795b6e95e93a273a5485d1e5758c5444cb/docs)和[第 09 章示例配套驱动](docs/09-example-dependencies.md)。
